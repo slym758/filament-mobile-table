@@ -1,0 +1,419 @@
+@media (max-width: 1024px) {
+    .fi-mobile-card-table thead {
+        display: none !important;
+    }
+
+    html .fi-mobile-card-table tbody {
+        display: block !important;
+        padding: 1rem !important;
+        background: rgb(248 250 252) !important;
+    }
+
+    /* Kart tasarımı - Modern & Şık */
+    .fi-mobile-card-table tr {
+        display: block !important;
+        margin-bottom: 1rem !important;
+        border: none !important;
+        border-radius: 12px !important;
+        padding: 0 !important;
+        background: white !important;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+        overflow: hidden !important;
+        transition: all 0.2s ease !important;
+    }
+
+    .fi-mobile-card-table tr:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.08) !important;
+    }
+
+    .fi-mobile-card-table tr:last-child {
+        margin-bottom: 0 !important;
+    }
+
+    /* Checkbox - Üst sol köşe */
+    .fi-mobile-card-table td:first-child {
+        display: flex !important;
+        justify-content: flex-start !important;
+        padding: 1rem 1.25rem 0.75rem !important;
+        background: rgb(248 250 252) !important;
+        border-bottom: 1px solid rgb(226 232 240) !important;
+    }
+
+    /* Normal hücreler */
+    html .fi-mobile-card-table td:not(:first-child):not(:last-child) {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 1rem !important;
+        border: none !important;
+        gap: 1rem !important;
+        border-bottom: 1px solid rgb(241 245 249) !important;
+        border-radius: 20px;
+    }
+
+    .fi-mobile-card-table td:not(:first-child):not(:last-child):last-of-type {
+        border-bottom: none !important;
+    }
+
+    /* Label */
+    html .fi-mobile-card-table td:not(:first-child):not(:last-child)::before {
+        content: attr(data-label) !important;
+        font-weight: 600 !important;
+        font-size: 0.75rem !important;
+        color: rgb(21, 21, 23) !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.05em !important;
+        flex-shrink: 0 !important;
+        min-width: 100px !important;
+    }
+
+    /* Featured label rengi - OVERRIDE */
+    html .fi-mobile-card-table td[data-featured="true"]::before {
+        color: rgb(255 255 255) !important;
+        font-weight: 800 !important;
+        font-size: 0.75rem !important;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+        opacity: 1 !important;
+    }
+
+    /* Value */
+    .fi-mobile-card-table td:not(:first-child):not(:last-child) > * {
+        font-weight: 700 !important;
+        font-size: 0.9375rem !important;
+        color: rgb(15 23 42) !important;
+        text-align: right !important;
+    }
+
+    /* Actions */
+    .fi-mobile-card-table td:last-child {
+        display: flex !important;
+        justify-content: center !important;
+        gap: 0.5rem !important;
+        padding: 1rem 1.25rem !important;
+        background: rgb(248 250 252) !important;
+        border-top: 1px solid rgb(226 232 240) !important;
+        border-bottom: none !important;
+        border-radius: 20px;
+    }
+}
+
+/* Dark mode */
+@media (max-width: 1024px) {
+    .dark .fi-mobile-card-table tbody {
+        background: rgb(15 23 42) !important;
+    }
+
+    .dark .fi-mobile-card-table tr {
+        background: rgb(30 41 59) !important;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+    }
+
+    .dark .fi-mobile-card-table tr:hover {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5), 0 8px 16px rgba(0, 0, 0, 0.4) !important;
+    }
+
+    .dark .fi-mobile-card-table td:first-child {
+        width: 0px !important;
+        background: rgb(15 23 42) !important;
+        border-bottom-color: rgb(51 65 85) !important;
+    }
+
+    .dark .fi-mobile-card-table td:not(:first-child):not(:last-child) {
+        border-bottom-color: rgb(51 65 85) !important;
+    }
+
+    .dark .fi-mobile-card-table td:not(:first-child):not(:last-child)::before {
+        color: rgb(148 163 184) !important;
+    }
+
+    .dark .fi-mobile-card-table td:not(:first-child):not(:last-child) > * {
+        color: rgb(241 245 249) !important;
+    }
+
+    .dark .fi-mobile-card-table td:last-child {
+        background: rgb(15 23 42) !important;
+        border-top-color: rgb(51 65 85) !important;
+        border-radius: 20px;
+    }
+}
+
+/* LAYOUT: Compact */
+@media (max-width: 1024px) {
+    .fi-mobile-layout-compact tr {
+        padding: 0 !important;
+        margin-bottom: 0.75rem !important;
+        border-radius: 8px !important;
+    }
+
+    .fi-mobile-layout-compact td:not(:first-child):not(:last-child) {
+        padding: 0.625rem 1rem !important;
+        font-size: 0.875rem !important;
+    }
+
+    .fi-mobile-layout-compact td:not(:first-child):not(:last-child)::before {
+        font-size: 0.6875rem !important;
+        min-width: 80px !important;
+    }
+
+    .fi-mobile-layout-compact td:not(:first-child):not(:last-child) > * {
+        font-size: 0.875rem !important;
+    }
+}
+
+/* LAYOUT: Minimal */
+@media (max-width: 1024px) {
+    .fi-mobile-layout-minimal tr {
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+        border: 1px solid rgb(226 232 240) !important;
+    }
+
+    .fi-mobile-layout-minimal td:not(:first-child):not(:last-child)::before {
+        display: none !important;
+    }
+
+    .fi-mobile-layout-minimal td:not(:first-child):not(:last-child) {
+        justify-content: center !important;
+        text-align: center !important;
+        padding: 0.5rem 1rem !important;
+    }
+}
+
+/* Tablet Columns */
+@media (min-width: 640px) and (max-width: 1024px) {
+    .fi-mobile-card-table[data-mobile-columns="1"] tbody {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+
+    .fi-mobile-card-table[data-mobile-columns="2"] tbody {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.75rem !important;  /* Azalttık */
+    }
+
+    .fi-mobile-card-table[data-mobile-columns="3"] tbody {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 0.5rem !important;  /* Daha da azalttık */
+    }
+
+    /* 3 kolon için kartları küçült */
+    .fi-mobile-card-table[data-mobile-columns="3"] tr {
+        margin-bottom: 0 !important;
+    }
+
+    .fi-mobile-card-table[data-mobile-columns="3"] td:not(:first-child):not(:last-child) {
+        padding: 0.625rem 0.875rem !important;
+        font-size: 0.8125rem !important;
+    }
+}
+
+/* Featured Field */
+/* Featured Field */
+@media (max-width: 1024px) {
+    .fi-mobile-card-table td[data-featured="true"] {
+        background: linear-gradient(135deg, rgb(59 130 246) 0%, rgb(37 99 235) 100%) !important;
+        padding: 1.25rem 1.25rem !important;
+        margin: -1px !important;
+        border: none !important;
+        order: -1 !important;
+    }
+
+    /* Tailwind Renkler */
+    .fi-mobile-card-table td[data-featured="true"][data-featured-color="red"] {
+        background: linear-gradient(135deg, rgb(239 68 68) 0%, rgb(220 38 38) 100%) !important;
+    }
+
+    .fi-mobile-card-table td[data-featured="true"][data-featured-color="orange"] {
+        background: linear-gradient(135deg, rgb(249 115 22) 0%, rgb(234 88 12) 100%) !important;
+    }
+
+    .fi-mobile-card-table td[data-featured="true"][data-featured-color="amber"] {
+        background: linear-gradient(135deg, rgb(251 191 36) 0%, rgb(245 158 11) 100%) !important;
+    }
+
+    .fi-mobile-card-table td[data-featured="true"][data-featured-color="yellow"] {
+        background: linear-gradient(135deg, rgb(250 204 21) 0%, rgb(234 179 8) 100%) !important;
+    }
+
+    .fi-mobile-card-table td[data-featured="true"][data-featured-color="lime"] {
+        background: linear-gradient(135deg, rgb(132 204 22) 0%, rgb(101 163 13) 100%) !important;
+    }
+
+    .fi-mobile-card-table td[data-featured="true"][data-featured-color="green"] {
+        background: linear-gradient(135deg, rgb(34 197 94) 0%, rgb(22 163 74) 100%) !important;
+    }
+
+    .fi-mobile-card-table td[data-featured="true"][data-featured-color="emerald"] {
+        background: linear-gradient(135deg, rgb(16 185 129) 0%, rgb(5 150 105) 100%) !important;
+    }
+
+    .fi-mobile-card-table td[data-featured="true"][data-featured-color="teal"] {
+        background: linear-gradient(135deg, rgb(20 184 166) 0%, rgb(13 148 136) 100%) !important;
+    }
+
+    .fi-mobile-card-table td[data-featured="true"][data-featured-color="cyan"] {
+        background: linear-gradient(135deg, rgb(6 182 212) 0%, rgb(8 145 178) 100%) !important;
+    }
+
+    .fi-mobile-card-table td[data-featured="true"][data-featured-color="sky"] {
+        background: linear-gradient(135deg, rgb(14 165 233) 0%, rgb(2 132 199) 100%) !important;
+    }
+
+    .fi-mobile-card-table td[data-featured="true"][data-featured-color="blue"] {
+        background: linear-gradient(135deg, rgb(59 130 246) 0%, rgb(37 99 235) 100%) !important;
+    }
+
+    .fi-mobile-card-table td[data-featured="true"][data-featured-color="indigo"] {
+        background: linear-gradient(135deg, rgb(99 102 241) 0%, rgb(79 70 229) 100%) !important;
+    }
+
+    .fi-mobile-card-table td[data-featured="true"][data-featured-color="violet"] {
+        background: linear-gradient(135deg, rgb(139 92 246) 0%, rgb(124 58 237) 100%) !important;
+    }
+
+    .fi-mobile-card-table td[data-featured="true"][data-featured-color="purple"] {
+        background: linear-gradient(135deg, rgb(168 85 247) 0%, rgb(147 51 234) 100%) !important;
+    }
+
+    .fi-mobile-card-table td[data-featured="true"][data-featured-color="fuchsia"] {
+        background: linear-gradient(135deg, rgb(217 70 239) 0%, rgb(192 38 211) 100%) !important;
+    }
+
+    .fi-mobile-card-table td[data-featured="true"][data-featured-color="pink"] {
+        background: linear-gradient(135deg, rgb(236 72 153) 0%, rgb(219 39 119) 100%) !important;
+    }
+
+    .fi-mobile-card-table td[data-featured="true"][data-featured-color="rose"] {
+        background: linear-gradient(135deg, rgb(244 63 94) 0%, rgb(225 29 72) 100%) !important;
+    }
+
+    .fi-mobile-card-table td[data-featured="true"][data-featured-color="slate"] {
+        background: linear-gradient(135deg, rgb(100 116 139) 0%, rgb(71 85 105) 100%) !important;
+    }
+
+    .fi-mobile-card-table td[data-featured="true"][data-featured-color="gray"] {
+        background: linear-gradient(135deg, rgb(107 114 128) 0%, rgb(75 85 99) 100%) !important;
+    }
+
+    .fi-mobile-card-table td[data-featured="true"][data-featured-color="zinc"] {
+        background: linear-gradient(135deg, rgb(113 113 122) 0%, rgb(82 82 91) 100%) !important;
+    }
+
+    .fi-mobile-card-table td[data-featured="true"][data-featured-color="neutral"] {
+        background: linear-gradient(135deg, rgb(115 115 115) 0%, rgb(82 82 82) 100%) !important;
+    }
+
+    .fi-mobile-card-table td[data-featured="true"][data-featured-color="stone"] {
+        background: linear-gradient(135deg, rgb(120 113 108) 0%, rgb(87 83 78) 100%) !important;
+    }
+
+    .fi-mobile-card-table td[data-featured="true"]::before {
+        color: rgb(255 255 255) !important;
+        font-weight: 800 !important;
+        font-size: 0.75rem !important;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+        opacity: 1 !important;
+    }
+
+    .fi-mobile-card-table td[data-featured="true"] > * {
+        color: rgb(255 255 255) !important;
+        font-size: 1.5rem !important;
+        font-weight: 800 !important;
+    }
+
+    /* Dark mode featured */
+    .dark .fi-mobile-card-table td[data-featured="true"] {
+        background: linear-gradient(135deg, rgb(37 99 235) 0%, rgb(29 78 216) 100%) !important;
+    }
+
+    .dark .fi-mobile-card-table td[data-featured="true"][data-featured-color="red"] {
+        background: linear-gradient(135deg, rgb(220 38 38) 0%, rgb(185 28 28) 100%) !important;
+    }
+
+    .dark .fi-mobile-card-table td[data-featured="true"][data-featured-color="orange"] {
+        background: linear-gradient(135deg, rgb(234 88 12) 0%, rgb(194 65 12) 100%) !important;
+    }
+
+    .dark .fi-mobile-card-table td[data-featured="true"][data-featured-color="amber"] {
+        background: linear-gradient(135deg, rgb(245 158 11) 0%, rgb(217 119 6) 100%) !important;
+    }
+
+    .dark .fi-mobile-card-table td[data-featured="true"][data-featured-color="yellow"] {
+        background: linear-gradient(135deg, rgb(234 179 8) 0%, rgb(202 138 4) 100%) !important;
+    }
+
+    .dark .fi-mobile-card-table td[data-featured="true"][data-featured-color="lime"] {
+        background: linear-gradient(135deg, rgb(101 163 13) 0%, rgb(77 124 15) 100%) !important;
+    }
+
+    .dark .fi-mobile-card-table td[data-featured="true"][data-featured-color="green"] {
+        background: linear-gradient(135deg, rgb(22 163 74) 0%, rgb(21 128 61) 100%) !important;
+    }
+
+    .dark .fi-mobile-card-table td[data-featured="true"][data-featured-color="emerald"] {
+        background: linear-gradient(135deg, rgb(5 150 105) 0%, rgb(4 120 87) 100%) !important;
+    }
+
+    .dark .fi-mobile-card-table td[data-featured="true"][data-featured-color="teal"] {
+        background: linear-gradient(135deg, rgb(13 148 136) 0%, rgb(15 118 110) 100%) !important;
+    }
+
+    .dark .fi-mobile-card-table td[data-featured="true"][data-featured-color="cyan"] {
+        background: linear-gradient(135deg, rgb(8 145 178) 0%, rgb(14 116 144) 100%) !important;
+    }
+
+    .dark .fi-mobile-card-table td[data-featured="true"][data-featured-color="sky"] {
+        background: linear-gradient(135deg, rgb(2 132 199) 0%, rgb(3 105 161) 100%) !important;
+    }
+
+    .dark .fi-mobile-card-table td[data-featured="true"][data-featured-color="blue"] {
+        background: linear-gradient(135deg, rgb(37 99 235) 0%, rgb(29 78 216) 100%) !important;
+    }
+
+    .dark .fi-mobile-card-table td[data-featured="true"][data-featured-color="indigo"] {
+        background: linear-gradient(135deg, rgb(79 70 229) 0%, rgb(67 56 202) 100%) !important;
+    }
+
+    .dark .fi-mobile-card-table td[data-featured="true"][data-featured-color="violet"] {
+        background: linear-gradient(135deg, rgb(124 58 237) 0%, rgb(109 40 217) 100%) !important;
+    }
+
+    .dark .fi-mobile-card-table td[data-featured="true"][data-featured-color="purple"] {
+        background: linear-gradient(135deg, rgb(147 51 234) 0%, rgb(126 34 206) 100%) !important;
+    }
+
+    .dark .fi-mobile-card-table td[data-featured="true"][data-featured-color="fuchsia"] {
+        background: linear-gradient(135deg, rgb(192 38 211) 0%, rgb(162 28 175) 100%) !important;
+    }
+
+    .dark .fi-mobile-card-table td[data-featured="true"][data-featured-color="pink"] {
+        background: linear-gradient(135deg, rgb(219 39 119) 0%, rgb(190 24 93) 100%) !important;
+    }
+
+    .dark .fi-mobile-card-table td[data-featured="true"][data-featured-color="rose"] {
+        background: linear-gradient(135deg, rgb(225 29 72) 0%, rgb(190 18 60) 100%) !important;
+    }
+
+    .dark .fi-mobile-card-table td[data-featured="true"][data-featured-color="slate"] {
+        background: linear-gradient(135deg, rgb(71 85 105) 0%, rgb(51 65 85) 100%) !important;
+    }
+
+    .dark .fi-mobile-card-table td[data-featured="true"][data-featured-color="gray"] {
+        background: linear-gradient(135deg, rgb(75 85 99) 0%, rgb(55 65 81) 100%) !important;
+    }
+
+    .dark .fi-mobile-card-table td[data-featured="true"][data-featured-color="zinc"] {
+        background: linear-gradient(135deg, rgb(82 82 91) 0%, rgb(63 63 70) 100%) !important;
+    }
+
+    .dark .fi-mobile-card-table td[data-featured="true"][data-featured-color="neutral"] {
+        background: linear-gradient(135deg, rgb(82 82 82) 0%, rgb(64 64 64) 100%) !important;
+    }
+
+    .dark .fi-mobile-card-table td[data-featured="true"][data-featured-color="stone"] {
+        background: linear-gradient(135deg, rgb(87 83 78) 0%, rgb(68 64 60) 100%) !important;
+    }
+}
