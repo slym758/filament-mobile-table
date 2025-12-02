@@ -22,7 +22,6 @@ class FilamentMobileTableServiceProvider extends PackageServiceProvider
 
     public function packageBooted(): void
     {
-        // CSS'i kaydet
         FilamentAsset::register([
             Css::make('mobile-cards-styles', __DIR__.'/../resources/css/mobile-cards.css'),
         ], 'mobile-cards/filament-mobile-table');
@@ -31,7 +30,7 @@ class FilamentMobileTableServiceProvider extends PackageServiceProvider
             $layout = $options['layout'] ?? 'default';
             $columns = $options['columns'] ?? 2;
 
-            $this->extraAttributes([
+            $attributes = [
                 'class' => "fi-mobile-card-table fi-mobile-layout-{$layout}",
                 'data-mobile-columns' => $columns,
                 'x-init' => "
@@ -49,7 +48,6 @@ class FilamentMobileTableServiceProvider extends PackageServiceProvider
                                     const headerText = headers[cellIndex].textContent.trim();
                                     cell.setAttribute('data-label', headerText);
 
-                                    // Featured kontrolü
                                     if (featuredColumn && headerText === featuredColumn) {
                                         cell.setAttribute('data-featured', 'true');
 
@@ -63,18 +61,41 @@ class FilamentMobileTableServiceProvider extends PackageServiceProvider
                         });
                     });
                 "
-            ]);
+            ];
+
+            // v3 ve v4 uyumluluğu
+            if (method_exists($this, 'extraAttributes')) {
+                // Filament v4
+                $this->extraAttributes($attributes);
+            } else {
+                // Filament v3
+                $this->extraTableAttributes($attributes);
+            }
 
             return $this;
         });
 
         Table::macro('mobileCardFeatured', function (string $column, ?string $color = 'blue') {
-            $currentAttrs = $this->getExtraAttributes();
+            // v3 ve v4 uyumluluğu
+            if (method_exists($this, 'extraAttributes')) {
+                $currentAttrs = $this->getExtraAttributes();
+            } else {
+                $currentAttrs = $this->getExtraTableAttributes();
+            }
 
-            $this->extraAttributes(array_merge($currentAttrs, [
+            $currentXInit = $currentAttrs['x-init'] ?? '';
+
+            $newAttrs = array_merge($currentAttrs, [
                 'data-featured-column' => $column,
                 'data-featured-color' => $color,
-            ]));
+                'x-init' => $currentXInit,
+            ]);
+
+            if (method_exists($this, 'extraAttributes')) {
+                $this->extraAttributes($newAttrs);
+            } else {
+                $this->extraTableAttributes($newAttrs);
+            }
 
             return $this;
         });
