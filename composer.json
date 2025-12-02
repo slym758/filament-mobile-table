@@ -1,5 +1,5 @@
 {
-    "name":" slym758/filament-mobile-table",
+    "name":"slym758/filament-mobile-table",
     "description": "Mobile responsive card view for Filament tables with featured fields, layouts, and colors",
     "keywords": ["filament", "laravel", "mobile", "responsive", "cards", "table"],
     "type": "library",
@@ -30,3 +30,4 @@
     "minimum-stability": "dev",
     "prefer-stable": true
 }
+
