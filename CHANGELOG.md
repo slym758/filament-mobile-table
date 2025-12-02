@@ -2,6 +2,15 @@
 
 All notable changes to `filament-mobile-table` will be documented in this file.
 
+## 1.0.1 - 2024-12-03
+
+### Changed
+- Now requires Filament v4.x only
+- Removed Filament v3 support for better maintainability
+
+### Fixed
+- Compatibility issues with method calls
+
 ## 1.0.0 - 2024-12-03
 
 ### Added
@@ -12,7 +21,6 @@ All notable changes to `filament-mobile-table` will be documented in this file.
 - Three layout options: default, compact, minimal
 - Responsive tablet grid (1-3 columns)
 - Full dark mode support
-- Filament v3 and v4 compatibility
 - Automatic responsive behavior (< 1024px)
 - Preserves all table features (sorting, actions, bulk actions, pagination)
 - Hover animations on cards

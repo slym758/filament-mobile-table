@@ -13,7 +13,7 @@ Transform your Filament tables into beautiful, responsive card layouts on mobile
 - 📱 **Responsive Grid** - Configurable 1-3 column layouts for tablets
 - 🌓 **Dark Mode** - Full dark mode support out of the box
 - ⚡ **Zero Config** - Works immediately with one method call
-- 🔧 **Filament v3 & v4** - Compatible with both major versions
+- 🔧 **Filament v4** 
 - ♿ **Accessible** - Maintains all Filament table features (sorting, actions, bulk actions)
 
 ## Screenshots
