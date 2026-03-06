@@ -1,0 +1,83 @@
+/* ===== BADGE SYSTEM ===== */
+
+/* Badge container: hidden on desktop, shown on mobile */
+.fi-mobile-badges {
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    /* Hide cells that are displayed as badges */
+    .fi-mobile-card-table .fi-ta-cell[data-is-badge="true"] {
+        display: none !important;
+    }
+
+    .fi-mobile-badges {
+        display: flex !important;
+        gap: 0.5rem !important;
+        flex-wrap: wrap !important;
+        padding: 0.75rem 1.25rem !important;
+        order: -2 !important;
+    }
+
+    .fi-mobile-badge {
+        display: inline-flex !important;
+        align-items: center !important;
+        padding: 0.375rem 0.875rem !important;
+        border-radius: 50px !important;
+        font-size: 0.6875rem !important;
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.05em !important;
+        white-space: nowrap !important;
+    }
+
+    /* Badge Colors */
+    .fi-mobile-badge[data-badge-color="success"] {
+        background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%) !important;
+        color: white !important;
+    }
+    .fi-mobile-badge[data-badge-color="warning"] {
+        background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important;
+        color: white !important;
+    }
+    .fi-mobile-badge[data-badge-color="danger"] {
+        background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%) !important;
+        color: white !important;
+    }
+    .fi-mobile-badge[data-badge-color="info"] {
+        background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%) !important;
+        color: white !important;
+    }
+    .fi-mobile-badge[data-badge-color="primary"] {
+        background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%) !important;
+        color: white !important;
+    }
+    .fi-mobile-badge[data-badge-color="gray"] {
+        background: #e5e7eb !important;
+        color: #374151 !important;
+    }
+    .fi-mobile-badge[data-badge-color="orange"] {
+        background: linear-gradient(135deg, #f97316 0%, #ea580c 100%) !important;
+        color: white !important;
+    }
+    .fi-mobile-badge[data-badge-color="purple"] {
+        background: linear-gradient(135deg, #a855f7 0%, #9333ea 100%) !important;
+        color: white !important;
+    }
+    .fi-mobile-badge[data-badge-color="pink"] {
+        background: linear-gradient(135deg, #ec4899 0%, #db2777 100%) !important;
+        color: white !important;
+    }
+    .fi-mobile-badge[data-badge-color="teal"] {
+        background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%) !important;
+        color: white !important;
+    }
+}
+
+/* ===== DARK MODE: Badge ===== */
+@media (max-width: 1024px) {
+    .dark .fi-mobile-badge[data-badge-color="gray"] {
+        background: #374151 !important;
+        color: #e5e7eb !important;
+    }
+}

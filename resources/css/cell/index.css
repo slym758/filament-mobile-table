@@ -1,0 +1,52 @@
+/* ===== DATA CELLS ===== */
+
+@media (max-width: 1024px) {
+    .fi-mobile-card-table .fi-ta-cell[class*="fi-ta-cell-"]:not([data-is-badge="true"]) {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 1rem !important;
+        border: none !important;
+        gap: 1rem !important;
+        border-bottom: 1px solid rgb(241 245 249) !important;
+    }
+
+    .fi-mobile-card-table .fi-ta-cell[class*="fi-ta-cell-"]:not([data-is-badge="true"]):last-of-type {
+        border-bottom: none !important;
+    }
+
+    /* ===== LABEL STYLES ===== */
+    .fi-mobile-card-table .fi-ta-cell[class*="fi-ta-cell-"]::before {
+        content: attr(data-label) !important;
+        font-weight: 600 !important;
+        font-size: 0.75rem !important;
+        color: rgb(21, 21, 23) !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.05em !important;
+        flex-shrink: 0 !important;
+        min-width: 100px !important;
+    }
+
+    /* ===== VALUE STYLES ===== */
+    .fi-mobile-card-table .fi-ta-cell[class*="fi-ta-cell-"] > * {
+        font-weight: 700 !important;
+        font-size: 0.9375rem !important;
+        color: rgb(15 23 42) !important;
+        text-align: right !important;
+    }
+}
+
+/* ===== DARK MODE: Cells ===== */
+@media (max-width: 1024px) {
+    .dark .fi-mobile-card-table .fi-ta-cell[class*="fi-ta-cell-"] {
+        border-bottom-color: rgb(51 65 85) !important;
+    }
+
+    .dark .fi-mobile-card-table .fi-ta-cell[class*="fi-ta-cell-"]::before {
+        color: rgb(148 163 184) !important;
+    }
+
+    .dark .fi-mobile-card-table .fi-ta-cell[class*="fi-ta-cell-"] > * {
+        color: rgb(241 245 249) !important;
+    }
+}

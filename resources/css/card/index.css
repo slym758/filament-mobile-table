@@ -1,0 +1,94 @@
+/* ===== CARD DESIGN ===== */
+
+@media (max-width: 1024px) {
+    .fi-mobile-card-table .fi-ta-table thead {
+        display: none !important;
+    }
+
+    .fi-mobile-card-table .fi-ta-table > tbody {
+        display: block !important;
+        padding: 1rem !important;
+        background: rgb(248 250 252) !important;
+    }
+
+    .fi-mobile-card-table .fi-ta-row:not(.fi-ta-group-header-row):not(.fi-ta-summary-row) {
+        display: block !important;
+        margin-bottom: 1rem !important;
+        border: none !important;
+        border-radius: 12px !important;
+        padding: 0 !important;
+        background: white !important;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+        overflow: hidden !important;
+        transition: all 0.2s ease !important;
+    }
+
+    .fi-mobile-card-table .fi-ta-row:not(.fi-ta-group-header-row):not(.fi-ta-summary-row):hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.08) !important;
+    }
+
+    .fi-mobile-card-table .fi-ta-row:last-child {
+        margin-bottom: 0 !important;
+    }
+
+    /* ===== CHECKBOX AREA ===== */
+    .fi-mobile-card-table .fi-ta-selection-cell {
+        display: flex !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+        padding: 0.75rem 1.25rem !important;
+    }
+
+    .fi-mobile-card-table .fi-ta-selection-cell input[type="checkbox"] {
+        -webkit-appearance: checkbox !important;
+        appearance: checkbox !important;
+        width: 1.125rem !important;
+        height: 1.125rem !important;
+        min-width: 1.125rem !important;
+        min-height: 1.125rem !important;
+        cursor: pointer !important;
+        accent-color: rgb(59 130 246) !important;
+    }
+
+    /* ===== ACTION AREA ===== */
+    .fi-mobile-card-table .fi-ta-cell:has(.fi-ta-actions) {
+        display: flex !important;
+        justify-content: center !important;
+        gap: 0.5rem !important;
+        padding: 1rem 1.25rem !important;
+        background: rgb(248 250 252) !important;
+        border-top: 1px solid rgb(226 232 240) !important;
+        border-bottom: none !important;
+    }
+}
+
+/* ===== DARK MODE: Card ===== */
+@media (max-width: 1024px) {
+    .dark .fi-mobile-card-table .fi-ta-table > tbody {
+        background: rgb(15 23 42) !important;
+    }
+
+    .dark .fi-mobile-card-table .fi-ta-row:not(.fi-ta-group-header-row):not(.fi-ta-summary-row) {
+        background: rgb(30 41 59) !important;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+    }
+
+    .dark .fi-mobile-card-table .fi-ta-row:not(.fi-ta-group-header-row):not(.fi-ta-summary-row):hover {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5), 0 8px 16px rgba(0, 0, 0, 0.4) !important;
+    }
+
+    .dark .fi-mobile-card-table .fi-ta-selection-cell {
+        background: rgb(15 23 42) !important;
+        border-bottom-color: rgb(51 65 85) !important;
+    }
+
+    .dark .fi-mobile-card-table .fi-ta-selection-cell input[type="checkbox"] {
+        border-color: rgb(100 116 139) !important;
+    }
+
+    .dark .fi-mobile-card-table .fi-ta-cell:has(.fi-ta-actions) {
+        background: rgb(15 23 42) !important;
+        border-top-color: rgb(51 65 85) !important;
+    }
+}

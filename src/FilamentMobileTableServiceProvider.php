@@ -3,6 +3,7 @@
 namespace MobileCards\FilamentMobileTable;
 
 use Filament\Support\Assets\Css;
+use Filament\Support\Assets\Js;
 use Filament\Support\Facades\FilamentAsset;
 use Filament\Tables\Table;
 use Spatie\LaravelPackageTools\Package;
@@ -14,56 +15,26 @@ class FilamentMobileTableServiceProvider extends PackageServiceProvider
 
     public function configurePackage(Package $package): void
     {
-        $package
-            ->name(static::$name)
-            ->hasViews()
-            ->hasConfigFile();
+        $package->name(static::$name);
     }
 
     public function packageBooted(): void
     {
-        // CSS'i kaydet
         FilamentAsset::register([
             Css::make('mobile-cards-styles', __DIR__.'/../resources/css/mobile-cards.css'),
-        ], 'mobile-cards/filament-mobile-table');
+            Js::make('mobile-cards-scripts', __DIR__.'/../resources/js/mobile-cards.js'),
+        ], package: 'mobile-cards/filament-mobile-table');
 
         Table::macro('mobileCards', function (array $options = []) {
             $layout = $options['layout'] ?? 'default';
             $columns = $options['columns'] ?? 2;
 
-            $this->extraAttributes([
+            $currentAttrs = $this->getExtraAttributes();
+
+            $this->extraAttributes(array_merge($currentAttrs, [
                 'class' => "fi-mobile-card-table fi-mobile-layout-{$layout}",
                 'data-mobile-columns' => $columns,
-                'x-init' => "
-                    \$nextTick(() => {
-                        const table = \$el;
-                        const headers = Array.from(table.querySelectorAll('thead th'));
-                        const rows = table.querySelectorAll('tbody tr');
-                        const featuredColumn = table.getAttribute('data-featured-column');
-
-                        rows.forEach(row => {
-                            const cells = Array.from(row.querySelectorAll('td'));
-
-                            cells.forEach((cell, cellIndex) => {
-                                if (cellIndex < headers.length) {
-                                    const headerText = headers[cellIndex].textContent.trim();
-                                    cell.setAttribute('data-label', headerText);
-
-                                    // Featured kontrolü
-                                    if (featuredColumn && headerText === featuredColumn) {
-                                        cell.setAttribute('data-featured', 'true');
-
-                                        const color = table.getAttribute('data-featured-color');
-                                        if (color) {
-                                            cell.setAttribute('data-featured-color', color);
-                                        }
-                                    }
-                                }
-                            });
-                        });
-                    });
-                "
-            ]);
+            ]));
 
             return $this;
         });
@@ -74,6 +45,17 @@ class FilamentMobileTableServiceProvider extends PackageServiceProvider
             $this->extraAttributes(array_merge($currentAttrs, [
                 'data-featured-column' => $column,
                 'data-featured-color' => $color,
+            ]));
+
+            return $this;
+        });
+
+        Table::macro('mobileCardBadges', function (array $fields, array $colors = []) {
+            $currentAttrs = $this->getExtraAttributes();
+
+            $this->extraAttributes(array_merge($currentAttrs, [
+                'data-badge-fields' => implode('|', $fields),
+                'data-badge-colors' => collect($colors)->map(fn ($v, $k) => "{$k}:{$v}")->implode('|'),
             ]));
 
             return $this;

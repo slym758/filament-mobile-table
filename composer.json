@@ -1,7 +1,14 @@
 {
-    "name":"slym758/filament-mobile-table",
+    "name": "mobile-cards/filament-mobile-table",
     "description": "Mobile responsive card view for Filament tables with featured fields, layouts, and colors",
-    "keywords": ["filament", "laravel", "mobile", "responsive", "cards", "table"],
+    "keywords": [
+        "filament",
+        "laravel",
+        "mobile",
+        "responsive",
+        "cards",
+        "table"
+    ],
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -30,4 +37,3 @@
     "minimum-stability": "dev",
     "prefer-stable": true
 }
-
